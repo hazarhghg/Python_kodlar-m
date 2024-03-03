@@ -49,15 +49,15 @@ while True:
             
             if son > 22:
                 print("Skorunuz tek kelimeyle berbat")
-                print("Bu yüzden toplam kazancınıza 500$ ekliyeceğiz")
-                para+=500
+                print("Bu yüzden toplam kazancınızdan -1000$ keseceğiz")
+                para+= -1000
                 print("Yani toplam kazancınız:",para,"$")
                 break
                 
             elif son == 22:
                 print("Skorunuz tek kelimeyle berbat")
-                print("Bu yüzden toplam kazancınıza 500$ ekliyeceğiz")
-                para+=500
+                print("Bu yüzden toplam kazancınızdan -1000$ keseceğiz")
+                para+= -1000
                 print("Yani toplam kazancınız:",para,"$")
                 break
                 
