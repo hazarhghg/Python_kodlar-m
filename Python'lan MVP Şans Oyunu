@@ -1,0 +1,146 @@
+import time
+import random
+para=0
+yanlış=random.randint(1,4)
+son=25
+mini_ödül=random.randint(-50000,40000)
+print("""
+MVP oyununa hoş geldiniz....
+Oyun nasıl oynanır:
+MVP oyunu kısaca bir Şans oyunur, para kazanabileceğiniz ve kaybedebileceğiniz bir oyundur
+MVP oyununda 1,2,3,4 adet kart vardır bu üç karttan birisi ANGEL kartıdır
+Eğer ANGEL kartını seçerseniz oyunu kaybedersiniz ve skorunuza göre toplam ödülünüze ekleriz
+Eğer ANGEL kartını seçemesseniz oyunu kaybetmemiş olursunuz ve o kartın arkasındaki parayı toplam ödülünüze ekleriz....
+Ayrıca ANGEL dışındaki her kartın arkasında +40.000$ ile -50.000$ arasında sayı gelir yani para kaybetme riskiniz var....
+Eğer 25 sefer ANGEL kartını seçmesseniz toplam ödülünüze +1.000.000$ ekleyeceğiz
+O zaman hadi başlayalım....
+ """)
+while True:
+    try:
+        seçim=int(input("\nSeçiminiz(1,2,3,4): "))
+        print("Sorgulanıyor....")
+        time.sleep(1)
+    except:
+        print("\nSorgulanıyor....")
+        time.sleep(1)
+        print("\nHatalı giriş !")
+        yanlış=random.randint(1,4)
+    else:
+        if seçim > 4:
+            print("\nLütfen 4'den yüksek rakamlar girmayiniz....")
+            mini_ödül=random.randint(-50000,40000)
+            yanlış=random.randint(1,4)
+            
+        elif seçim < 1:
+            print("\nLütfen 1'den küçük rakamlar girmeyiniz...")
+            mini_ödül=random.randint(-50000,40000)
+            yanlış=random.randint(1,4)
+            
+        elif son == 1:
+            print("\nTebrikler OYUNU KAZANDINIZ ve 1.000.000 $'ın sahibi oldunuz....""")
+            para+=1000000
+            print("Toplam kazancınız",para,"$'dır")
+            break
+            
+        elif seçim == yanlış:
+            print("\nOyunu Kaybettiniz....")
+            print("Oyunu ne kadar iyi oynadınız: ")
+            print("Kalan yanmama sayınız:",son)
+            
+            if son > 22:
+                print("Skorunuz tek kelimeyle berbat")
+                print("Bu yüzden toplam kazancınıza 500$ ekliyeceğiz")
+                para+=500
+                print("Yani toplam kazancınız:",para,"$")
+                break
+                
+            elif son == 22:
+                print("Skorunuz tek kelimeyle berbat")
+                print("Bu yüzden toplam kazancınıza 500$ ekliyeceğiz")
+                para+=500
+                print("Yani toplam kazancınız:",para,"$")
+                break
+                
+            elif son  > 18 and son < 22:
+                print("Yanii fena değil skorunuz daha iyi oynayabilirdiniz....")
+                print("Bu yüzden toplam kazancınıza 2000$ ekliyeceğiz")
+                para+=2000
+                print("Yani toplam kazancınız:",para,"$")
+                break
+                
+            elif son == 18:
+                print("Yanii fena değil skorunuz daha iyi oynayabilirdiniz....")
+                print("Bu yüzden toplam kazancınıza 2000$ ekliyeceğiz")
+                para+=2000
+                print("Yani toplam kazancınız:",para,"$")
+                break
+                
+            elif son > 16 and son < 18:
+                print("Ooo skorunuz iyimiş bence tebrik ederim sizi")
+                print("Bu yüzden toplam kazancınıza 10000$ ekliyeceğiz")
+                para+=10000
+                print("Yani toplam kazancınız:",para,"$")
+                break
+                
+            elif son == 16:
+                print("Ooo skorunuz iyimiş bence tebrik ederim sizi")
+                print("Bu yüzden toplam kazancınıza 10000$ ekliyeceğiz")
+                para+=10000
+                print("Yani toplam kazancınız:",para,"$")
+                break
+                
+            elif son > 12 and son < 16:
+                print("Skorunuzu aşşırı beğendim baya iyi dayanmışsınız sizi tebrik ederim")
+                print("Bu yüzden toplam kazancınıza 50000$ ekliyeceğiz")
+                para+=50000
+                print("Yani toplam kazancınız:",para,"$")
+                break
+                
+            elif son == 12:
+                print("Skorunuzu aşşırı beğendim baya iyi dayanmışsınız sizi tebrik ederim")
+                print("Bu yüzden toplam kazancınıza 50000$ ekliyeceğiz")
+                para+=50000
+                print("Yani toplam kazancınız:",para,"$")
+                break
+                
+            elif son > 6 and son < 12:
+                print("OHA buraya kadar nasıl dayandınız be skorunuz efsane buarada sizi TEBRİK ederim")
+                print("Bu yüzden toplam kazancınıza 80000$ ekliyeceğiz")
+                para+=80000
+                print("Yani toplam kazancınız:",para,"$")
+                break
+                
+            elif son == 6:
+                print("OHA buraya kadar nasıl dayandınız be skorunuz efsane buarada sizi TEBRİK ederim")
+                print("Bu yüzden toplam kazancınıza 80000$ ekliyeceğiz")
+                para+=80000
+                print("Yani toplam kazancınız:",para,"$")
+                break
+                
+            elif son > 1:
+                print("OH MY GOD nasıl buraya kadar dayanmayı başardın reis adamsın seis seni TEBRİK Ederim")
+                print("Bu yüzden toplam kazancınıza 100000$ ekliyeceğiz")
+                para+=100000
+                print("Yani toplam kazancınız:",para,"$")
+                break;
+                
+            elif son == 1:
+                print("Bana kalırsa sen zaten kazanmışsın....")
+                print("Bu yüzden toplam kazancınıza 100000$ ekliyeceğiz")
+                para+=100000
+                print("Yani toplam kazancınız",para,"$")
+                break
+            
+        elif seçim != yanlış:
+            son -= 1
+            print("\nSizi kaybettiren kartı seçmediniz ve kazanmak için son {end} kere daha bilmeniz gerek".format(end=son))
+            print("Seçtiğiniz kartta {money}$ bulunuyordu ve biz bunu toplam kazancınıza ekledik".format(money=mini_ödül))
+            para+=mini_ödül
+            print("Şu anda toplam kazancınız {toplam}$ dır".format(toplam=para))
+            mini_ödül=random.randint(-50000,40000)
+            yanlış=random.randint(1,4)
+            
+        else:
+            print("\nHatalı Giriş")
+            yanlış=random.randint(1,4)
+            mini_ödül=random.randint(-50000,40000)
