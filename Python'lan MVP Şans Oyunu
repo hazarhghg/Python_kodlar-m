@@ -13,8 +13,7 @@ Eğer ANGEL kartını seçerseniz oyunu kaybedersiniz ve skorunuza göre toplam 
 Eğer ANGEL kartını seçemesseniz oyunu kaybetmemiş olursunuz ve o kartın arkasındaki parayı toplam ödülünüze ekleriz....
 Ayrıca ANGEL dışındaki her kartın arkasında +40.000$ ile -50.000$ arasında sayı gelir yani para kaybetme riskiniz var....
 Eğer 25 sefer ANGEL kartını seçmesseniz toplam ödülünüze +1.000.000$ ekleyeceğiz
-O zaman hadi başlayalım....
- """)
+O zaman hadi başlayalım....""")
 while True:
     try:
         seçim=int(input("\nSeçiminiz(1,2,3,4): "))
@@ -30,107 +29,61 @@ while True:
             print("\nLütfen 4'den yüksek rakamlar girmayiniz....")
             mini_ödül=random.randint(-50000,40000)
             yanlış=random.randint(1,4)
-            
         elif seçim < 1:
             print("\nLütfen 1'den küçük rakamlar girmeyiniz...")
             mini_ödül=random.randint(-50000,40000)
             yanlış=random.randint(1,4)
-            
         elif son == 1:
             print("\nTebrikler OYUNU KAZANDINIZ ve 1.000.000 $'ın sahibi oldunuz....""")
             para+=1000000
             print("Toplam kazancınız",para,"$'dır")
             break
-            
         elif seçim == yanlış:
             print("\nOyunu Kaybettiniz....")
             print("Oyunu ne kadar iyi oynadınız: ")
             print("Kalan yanmama sayınız:",son)
-            
-            if son > 22:
+            if son > 22 or son == 22:
                 print("Skorunuz tek kelimeyle berbat")
                 print("Bu yüzden toplam kazancınızdan -1000$ keseceğiz")
                 para+= -1000
                 print("Yani toplam kazancınız:",para,"$")
                 break
-                
-            elif son == 22:
-                print("Skorunuz tek kelimeyle berbat")
-                print("Bu yüzden toplam kazancınızdan -1000$ keseceğiz")
-                para+= -1000
-                print("Yani toplam kazancınız:",para,"$")
-                break
-                
-            elif son  > 18 and son < 22:
+            elif son  > 18 and son < 22 or son == 18:
                 print("Yanii fena değil skorunuz daha iyi oynayabilirdiniz....")
                 print("Bu yüzden toplam kazancınıza 2000$ ekliyeceğiz")
                 para+=2000
                 print("Yani toplam kazancınız:",para,"$")
                 break
-                
-            elif son == 18:
-                print("Yanii fena değil skorunuz daha iyi oynayabilirdiniz....")
-                print("Bu yüzden toplam kazancınıza 2000$ ekliyeceğiz")
-                para+=2000
-                print("Yani toplam kazancınız:",para,"$")
-                break
-                
-            elif son > 16 and son < 18:
+            elif son > 16 and son < 18 or son == 16:
                 print("Ooo skorunuz iyimiş bence tebrik ederim sizi")
                 print("Bu yüzden toplam kazancınıza 10000$ ekliyeceğiz")
                 para+=10000
                 print("Yani toplam kazancınız:",para,"$")
-                break
-                
-            elif son == 16:
-                print("Ooo skorunuz iyimiş bence tebrik ederim sizi")
-                print("Bu yüzden toplam kazancınıza 10000$ ekliyeceğiz")
-                para+=10000
-                print("Yani toplam kazancınız:",para,"$")
-                break
-                
-            elif son > 12 and son < 16:
+                break 
+            elif son > 12 and son < 16 or son == 12:
                 print("Skorunuzu aşşırı beğendim baya iyi dayanmışsınız sizi tebrik ederim")
                 print("Bu yüzden toplam kazancınıza 50000$ ekliyeceğiz")
                 para+=50000
                 print("Yani toplam kazancınız:",para,"$")
                 break
-                
-            elif son == 12:
-                print("Skorunuzu aşşırı beğendim baya iyi dayanmışsınız sizi tebrik ederim")
-                print("Bu yüzden toplam kazancınıza 50000$ ekliyeceğiz")
-                para+=50000
-                print("Yani toplam kazancınız:",para,"$")
-                break
-                
-            elif son > 6 and son < 12:
+            elif son > 6 and son < 12 or son == 6:
                 print("OHA buraya kadar nasıl dayandınız be skorunuz efsane buarada sizi TEBRİK ederim")
                 print("Bu yüzden toplam kazancınıza 80000$ ekliyeceğiz")
                 para+=80000
                 print("Yani toplam kazancınız:",para,"$")
                 break
-                
-            elif son == 6:
-                print("OHA buraya kadar nasıl dayandınız be skorunuz efsane buarada sizi TEBRİK ederim")
-                print("Bu yüzden toplam kazancınıza 80000$ ekliyeceğiz")
-                para+=80000
-                print("Yani toplam kazancınız:",para,"$")
-                break
-                
             elif son > 1:
                 print("OH MY GOD nasıl buraya kadar dayanmayı başardın reis adamsın seis seni TEBRİK Ederim")
                 print("Bu yüzden toplam kazancınıza 100000$ ekliyeceğiz")
                 para+=100000
                 print("Yani toplam kazancınız:",para,"$")
-                break;
-                
+                break      
             elif son == 1:
                 print("Bana kalırsa sen zaten kazanmışsın....")
                 print("Bu yüzden toplam kazancınıza 100000$ ekliyeceğiz")
                 para+=100000
                 print("Yani toplam kazancınız",para,"$")
                 break
-            
         elif seçim != yanlış:
             son -= 1
             print("\nSizi kaybettiren kartı seçmediniz ve kazanmak için son {end} kere daha bilmeniz gerek".format(end=son))
@@ -139,7 +92,6 @@ while True:
             print("Şu anda toplam kazancınız {toplam}$ dır".format(toplam=para))
             mini_ödül=random.randint(-50000,40000)
             yanlış=random.randint(1,4)
-            
         else:
             print("\nHatalı Giriş")
             yanlış=random.randint(1,4)
